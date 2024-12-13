@@ -388,8 +388,9 @@ function namesOnly(arr) {
 // 1. write function ==> function will take array as input
 // 2. sort the numbers inside the array and return sorted array
  
-function sortedArray(array) {}
- 
+function sortedArray(arr) {
+    return arr.sort((a, b) => b - a);
+}
 console.log(sortedArray([5, 7, 10, -10, 56]));
 // ==> [56, 10, 7,5,-10]
 /*
@@ -403,7 +404,7 @@ Create a function that will display the smallest value in the array.
 Example:
 > console.log(findSmallest([30, 45, 60, 7]));
 > 1
- 
+
  
 Exercise 2
  
@@ -454,5 +455,58 @@ Example:
 > 1
  
 */
+// exercise 1
+function findSmallest(arr) {
+    return Math.min(...arr);
+} console.log(findSmallest([30, 45, 60, 7]));
+
+// exercise 2
+
+function numbersOnly (arr){
+    return arr.filter(Element => typeof Element !== 'string');
+
+} console.log(numbersOnly(['text', 3, 7, 'github', 13, 'dev']));
+
+// exercise 3
+
+function minMaxLengthAverage(arr) {
+    const lowest = Math.min(...arr);
+
+    const max = Math.max (...arr);
+
+    const length = arr.length;
+
+    const average = arr.reduce ((sum, num) => sum + num, 0 ) / length;
+
+    return [lowest, max, length, average];
+    
+} console.log(minMaxLengthAverage([7, 13, 3, 77, 100]));
+
+
+// exercise 4
+function countWords(arr) {
+    const words = arr.trim().split(/\s+/);
+    return words.length
+} console.log(countWords('hello from kbpsystem!'));
+
+// exercise 5  MultiplyByLength([4,1,1]);
+
+function MultiplyByLength(arr) {
+    const length = arr.length
+
+    return arr.map(Element => Element * length);
+    
+}
+console.log(MultiplyByLength([4, 1, 1]));
+
+// exercise 6 
+
+function findIndex(arr, element) {
+    return arr.indexOf(element);
+}
+console.log(findIndex(['github', 'gitlab', 'bitbucket', 'apollo'], 'gitlab'));
+
+
+
  
  
